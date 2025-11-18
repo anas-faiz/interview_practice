@@ -3,21 +3,21 @@ class Stack {
         // Initialize your stack
         this.items = [];
     }
-    
+
     push(element) {
         // Add element to the top
         this.items.push(element)
         return this.items.length
     }
-    
+
     pop() {
         // Remove and return top element
         if (this.items.length == 0) {
             return undefined
         }
-       return this.items.pop()
+        return this.items.pop()
     }
-    
+
     peek() {
         // Return top element without removing
         if (this.items.length == 0) {
@@ -25,18 +25,18 @@ class Stack {
         }
         return this.items[this.items.length - 1];
     }
-    
+
     isEmpty() {
         // Check if stack is empty
 
         return this.items.length == 0 ? true : false
-     }
-    
+    }
+
     size() {
         // Return number of elements
-        return this.items.length 
+        return this.items.length
     }
-    
+
     clear() {
         // Remove all elements
         this.items = [];
