@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import "./styles.css";
 
@@ -19,24 +19,19 @@ const faqs = [
 ];
 
 function FaqAccordion() {
-
   const [openIndex, setOpenIndex] = useState(null);
-  
+
   function handleClick(index) {
-    setOpenIndex(prev => (prev === index ? null : index));
+    setOpenIndex((prev) => (prev === index ? null : index));
   }
 
   return (
     <div className="faq-container">
       <h2 className="faq-title">Frequently Asked Questions</h2>
-      
+
       {faqs.map((faq, index) => (
-        <div 
-          className="faq-item"
-          data-testid={`faq-item-${index}`}
-          key={index}
-        >
-          <button 
+        <div className="faq-item" data-testid={`faq-item-${index}`} key={index}>
+          <button
             className="faq-question"
             data-testid={`faq-question-${index}`}
             onClick={() => handleClick(index)}
@@ -52,9 +47,7 @@ function FaqAccordion() {
           </button>
 
           {openIndex === index && (
-            <div data-testid={`faq-answer-${index}`}>
-              {faq.answer}
-            </div>
+            <div data-testid={`faq-answer-${index}`}>{faq.answer}</div>
           )}
         </div>
       ))}
