@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import "./style.css";
+import React, { useState } from "react";
+import "./styles.css";
 
 function EvenOrOddChecker() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isNumber, setIsNumber] = useState(false);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState();
 
   const handleClick = () => {
-    if (!isNaN(Number(input)) && input !== '') {
+    if (!isNaN(Number(input)) && input !== "") {
       setIsNumber(true);
       setLoading(true);
       setTimeout(() => {
         const num = input;
         if (num % 2 === 0) {
-          setResult(`${num} is an even number`);
+          setResult(`The number ${num} is even.`);
         } else {
-          setResult(`${num} is a odd number`);
+          setResult(`The number ${num} is odd.`);
         }
         setLoading(false);
       }, 1000);
-    }else{
-        setIsNumber(false)
-      setInput('')
-      setResult('')
+    } else {
+      setIsNumber(false);
+      setInput("");
+      setResult("Please enter a valid number.");
     }
   };
 
@@ -35,23 +35,31 @@ function EvenOrOddChecker() {
         className="number-input"
         type="text"
         placeholder="Enter a number"
+        data-testid="number-input"
         value={input}
         onChange={(e) => {
           setInput(e.target.value);
         }}
       />
-      {isNumber ? ' ' : <p>enter a valid Input</p>}
 
-      <button onClick={handleClick} className="check-button">
+      <button
+        onClick={handleClick}
+        className="check-button"
+        data-testid="check-button"
+      >
         Check
       </button>
 
       <div className="result-area">
         <div className="result">
-          {loading ? <p>checking...</p> : <p>{result}</p>}
+          {loading ? (
+            <p data-testid="loading">Checking....</p>
+          ) : (
+            <p data-testid="result">{result}</p>
+          )}
         </div>
       </div>
-    </div>  
+    </div>
   );
 }
 
