@@ -39,9 +39,7 @@ function AsteriskFieldValidation() {
     <div className="container">
       <h1 className="title">Asterisk Field Validation</h1>
 
-      <form className="form"
-        data-testid="form"
-        onSubmit={handleSubmit}>
+      <form className="form" data-testid="form" onSubmit={handleSubmit}>
         <div className="input-group">
           <label htmlFor="name" className="label">
             Name <span className="asterisk">*</span>
@@ -55,9 +53,11 @@ function AsteriskFieldValidation() {
             value={nameInput}
             onChange={(e) => setNameInput(e.target.value)}
           />
-          {nameError && <p className="inline-error"
-            data-testid="name-error"
-          >{nameError}</p>}
+          {nameError && (
+            <p className="inline-error" data-testid="name-error">
+              {nameError}
+            </p>
+          )}
         </div>
 
         <div className="input-group">
@@ -73,13 +73,18 @@ function AsteriskFieldValidation() {
             value={locationInput}
             onChange={(e) => setLocationInput(e.target.value)}
           />
-          {locationError && <p className="inline-error"
-            data-testid="location-error"
-          >{locationError}</p>}
+          {locationError && (
+            <p className="inline-error" data-testid="location-error">
+              {locationError}
+            </p>
+          )}
         </div>
 
-        <button type="submit" className="submit-button"
-        data-testid="submit-button">
+        <button
+          type="submit"
+          className="submit-button"
+          data-testid="submit-button"
+        >
           Submit
         </button>
       </form>

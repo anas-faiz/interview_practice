@@ -6,9 +6,9 @@ function findMaxNumber(arr) {
 
     let max = arr[0];
 
-    for (let i = 0; i < n; i++){
+    for (let i = 0; i < n; i++) {
         let value = arr[i];
-        if (value > max) max = value; 
+        if (value > max) max = value;
     }
     return max;
 }
