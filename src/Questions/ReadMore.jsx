@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./styles.css";
 
 function ReadMoreToggle() {
+
   const text = `React is a popular JavaScript library developed by Facebook for 
   building user interfaces, especially single-page applications. It allows
    developers to create reusable UI components that efficiently update and 
